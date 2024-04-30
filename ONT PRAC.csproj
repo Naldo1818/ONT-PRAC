@@ -43,6 +43,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Decorator\HMT_Camera.cs" />
+    <Compile Include="Decorator\LMT_Camera.cs" />
+    <Compile Include="Decorator\HMT_SoundSystem.cs" />
+    <Compile Include="Decorator\MBT_Camera.cs" />
+    <Compile Include="Decorator\LMT_SoundSystem.cs" />
+    <Compile Include="Decorator\LMT_WiFi.cs" />
+    <Compile Include="Decorator\HMT_WiFi.cs" />
+    <Compile Include="Decorator\MBT_WiFi.cs" />
+    <Compile Include="Decorator\MBT_SoundSystem.cs" />
+    <Compile Include="Decorator\CondimentDecorator.cs" />
+    <Compile Include="Decorator\Additions.cs" />
+    <Compile Include="Decorator\LightMotorTechnician.cs" />
+    <Compile Include="Decorator\Heavy Motor Technician.cs" />
+    <Compile Include="Decorator\MotorBikeTechnician.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
