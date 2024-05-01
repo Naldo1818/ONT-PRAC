@@ -18,11 +18,11 @@ namespace ONT_PRAC.Observer
         {
             observers.Remove(observer);
         }
-        public void Notify(string Newsletters)
+        public void Notify(string Newsletters, string Vehicle)
         {
             foreach(var x in observers)
             {
-                x.Update(Newsletters);
+                x.Update(Newsletters, Vehicle);
             }
         }
 

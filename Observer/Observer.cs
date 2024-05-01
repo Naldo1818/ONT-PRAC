@@ -9,6 +9,6 @@ namespace ONT_PRAC.Observer
     //Observer
     public interface IObserver
     {
-        void Update(string Newsletter);
+        void Update(string Newsletter, string Vehicle);
     }
 }

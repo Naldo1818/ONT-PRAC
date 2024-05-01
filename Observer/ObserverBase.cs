@@ -14,9 +14,9 @@ namespace ONT_PRAC.Observer
         {
             this._newsletter = NewsMessage;
         }
-        public void Update(string NewsMessage)
+        public void Update(string NewsMessage, string Vehicle)
         {
-            Console.WriteLine($"{NewsMessage} for this vehicle is availible");
+            Console.WriteLine($"{NewsMessage} for this {Vehicle} is availible");
         }
     }
 }

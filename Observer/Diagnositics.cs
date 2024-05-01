@@ -9,6 +9,7 @@ namespace ONT_PRAC.Observer
     internal class Diagnositics:SubjectBase
     {
         private string message;
+        private string vehicle;
         private string Diag1;
         public string Diagnostic
         {
@@ -18,7 +19,7 @@ namespace ONT_PRAC.Observer
                 if (Diag1 != value)
                 {
                     Diag1 = value;
-                    Notify(message);
+                    Notify(message,vehicle);
                 }
             }
         }

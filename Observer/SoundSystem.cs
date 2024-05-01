@@ -9,6 +9,7 @@ namespace ONT_PRAC.Observer
     internal class SoundSystem:SubjectBase
     {
         private string message;
+        private string vehicle;
         private string sound;
         public string _SoundSystem
         {
@@ -18,7 +19,7 @@ namespace ONT_PRAC.Observer
                 if (sound != value)
                 {
                     sound = value;
-                    Notify(message);
+                    Notify(message,vehicle);
                 }
             }
         }

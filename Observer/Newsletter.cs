@@ -10,6 +10,7 @@ namespace ONT_PRAC.Observer
     internal class Newsletter:SubjectBase
     {
         private string message;
+        private string vehicle;
         private string New1;
         public string _newsletter
         {
@@ -19,7 +20,7 @@ namespace ONT_PRAC.Observer
                 if (New1 != value)
                 {
                     New1 = value;
-                    Notify(message);
+                    Notify(message, vehicle);
                 } 
             }
         }
