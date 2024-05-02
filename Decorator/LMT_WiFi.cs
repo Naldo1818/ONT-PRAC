@@ -8,8 +8,8 @@ namespace ONT_PRAC.Decorator
 {
     class LMT_WiFi : CondimentDecorator
     {
-        Additions additions;
-        public LMT_WiFi(Additions additions) : base(additions)
+        Strategy additions;
+        public LMT_WiFi(Strategy additions) : base(additions)
         {
             this.additions = additions;
         }

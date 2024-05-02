@@ -8,8 +8,8 @@ namespace ONT_PRAC.Decorator
 {
     class HMT_SoundSystem : CondimentDecorator
     {
-        Additions additions;
-        public HMT_SoundSystem(Additions additions) : base(additions)
+        Strategy additions;
+        public HMT_SoundSystem(Strategy additions) : base(additions)
         {
             this.additions = additions;
         }

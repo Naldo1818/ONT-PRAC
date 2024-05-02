@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ONT_PRAC.Decorator
 {
-    abstract class Additions//ComponentBase
+    abstract class Strategy//ComponentBase
     {
         public abstract string Description();
         public abstract double Cost();

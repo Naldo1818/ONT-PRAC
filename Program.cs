@@ -11,13 +11,46 @@ namespace ONT_PRAC
     internal class Program
     {
         static void Main(string[] args)
-        {
+        {   //Strategy
+            VehicleAssemble motorBike = new Two_People_and_bag();
+            VehicleAssemble lightMotorVehicle = new Five_People_and_luggage();
+            VehicleAssemble HeavyMotorVehicle = new Twenty_People();
+            VehicleAssemble HeavyMotorVehicle2 = new Good_Driver_Carrier();
+            VehicleAssemble HeavyMotorVehicle3 = new SixtyFive_People();
+
+
+            motorBike = new Small_Engine(motorBike);
+            motorBike = new CannotTow(motorBike);
+
+            lightMotorVehicle = new Medium_Engine(lightMotorVehicle);
+            lightMotorVehicle = new CanTow(lightMotorVehicle);
+
+            HeavyMotorVehicle = new Large_Engine(HeavyMotorVehicle);
+            HeavyMotorVehicle = new CannotTow(HeavyMotorVehicle);
+
+            HeavyMotorVehicle2 = new Extra_Large_Engine(HeavyMotorVehicle2);
+            HeavyMotorVehicle2 = new CanTow(HeavyMotorVehicle2);
+
+            HeavyMotorVehicle3 = new Extra_Large_Engine(HeavyMotorVehicle3);
+            HeavyMotorVehicle3 = new CanTow(HeavyMotorVehicle3);
+
+            // Print descriptions of decorated vehicle assemblies
+            Console.WriteLine(motorBike.GetDescription());
+            Console.WriteLine(lightMotorVehicle.GetDescription());
+            Console.WriteLine(HeavyMotorVehicle.GetDescription());
+            Console.WriteLine(HeavyMotorVehicle2.GetDescription());
+            Console.WriteLine(HeavyMotorVehicle3.GetDescription());
+
+            Console.ReadLine();
+
+
+
 
             Newsletter newsletter = new Newsletter();//calling the types of update notifications
             Diagnositics diagnositics = new Diagnositics();
             SoundSystem soundSystem = new SoundSystem();
 
-            Additions LMTwithSoundAndWifi = new LightMotorTechnician();
+            Strategy LMTwithSoundAndWifi = new LightMotorTechnician();//Decorator pattern  for the display
             LMTwithSoundAndWifi = new LMT_SoundSystem(LMTwithSoundAndWifi);
             LMTwithSoundAndWifi = new LMT_WiFi(LMTwithSoundAndWifi);
             Console.WriteLine(LMTwithSoundAndWifi.Description() + "\nTotal Amount- " + LMTwithSoundAndWifi.Cost().ToString("C"));
@@ -34,7 +67,7 @@ namespace ONT_PRAC
             soundSystem.Detach(o1);
             Console.WriteLine();
 
-            Additions HMTwithWifiAndCameraAndSound = new HeavyMotorTechnician();
+            Strategy HMTwithWifiAndCameraAndSound = new HeavyMotorTechnician();//Decorator pattern  for the display
             HMTwithWifiAndCameraAndSound = new HMT_Camera(HMTwithWifiAndCameraAndSound);
             HMTwithWifiAndCameraAndSound = new HMT_WiFi(HMTwithWifiAndCameraAndSound);
             HMTwithWifiAndCameraAndSound = new HMT_SoundSystem(HMTwithWifiAndCameraAndSound);
@@ -52,17 +85,17 @@ namespace ONT_PRAC
             soundSystem.Detach(o2);
             Console.WriteLine();
 
-            Additions MBTwithWifi = new MotorBikeTechnician();
+            Strategy MBTwithWifi = new MotorBikeTechnician();
             MBTwithWifi = new LMT_SoundSystem(MBTwithWifi);
             Console.WriteLine(MBTwithWifi.Description() + "\nTotal Amount- " + MBTwithWifi.Cost().ToString("C"));
             
-            ObserverBase o3 = new ObserverBase("m");//observer pattern  for the display of uopdates for the vehicle 
-            newsletter.Attach(o3);
-            diagnositics.Attach(o3);
-            diagnositics.Notify("Diagnosis", "Motorbike");
-            newsletter.Notify("Discount of 20%", "Motorbike");
-            newsletter.Detach(o3);
-            diagnositics.Detach(o3);
+            //ObserverBase o3 = new ObserverBase("m");//observer pattern  for the display of uopdates for the vehicle 
+            //newsletter.Attach(o3);
+            //diagnositics.Attach(o3);
+            //diagnositics.Notify("Diagnosis", "Motorbike");
+            //newsletter.Notify("Discount of 20%", "Motorbike");
+            //newsletter.Detach(o3);
+            //diagnositics.Detach(o3);
             
             Console.WriteLine();
             Console.ReadLine();

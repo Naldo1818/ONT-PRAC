@@ -8,8 +8,8 @@ namespace ONT_PRAC.Decorator
 {
     class LMT_Camera : CondimentDecorator
     {
-        Additions additions;
-        public LMT_Camera(Additions additions) : base(additions)
+        Strategy additions;
+        public LMT_Camera(Strategy additions) : base(additions)
         {
             this.additions = additions;
         }
