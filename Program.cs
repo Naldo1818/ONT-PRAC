@@ -34,27 +34,22 @@ namespace ONT_PRAC
             HeavyMotorVehicle3 = new Extra_Large_Engine(HeavyMotorVehicle3);
             HeavyMotorVehicle3 = new CanTow(HeavyMotorVehicle3);
 
-            // Print descriptions of decorated vehicle assemblies
-            Console.WriteLine(motorBike.GetDescription());
-            Console.WriteLine(lightMotorVehicle.GetDescription());
-            Console.WriteLine(HeavyMotorVehicle.GetDescription());
-            Console.WriteLine(HeavyMotorVehicle2.GetDescription());
-            Console.WriteLine(HeavyMotorVehicle3.GetDescription());
-
-            Console.ReadLine();
-
-
-
-
+            // Print descriptions of decorated vehicle assemblies              
+             //Console.WriteLine(HeavyMotorVehicle2.GetDescription());
+            //Console.WriteLine(HeavyMotorVehicle3.GetDescription());
+                 
             Newsletter newsletter = new Newsletter();//calling the types of update notifications
             Diagnositics diagnositics = new Diagnositics();
             SoundSystem soundSystem = new SoundSystem();
+
+            string Choice;
+            Choice = Console.Write("Do you want to add a Camera to your Car? (Y/N) "))
 
             Strategy LMTwithSoundAndWifi = new LightMotorTechnician();//Decorator pattern  for the display
             LMTwithSoundAndWifi = new LMT_SoundSystem(LMTwithSoundAndWifi);
             LMTwithSoundAndWifi = new LMT_WiFi(LMTwithSoundAndWifi);
             Console.WriteLine(LMTwithSoundAndWifi.Description() + "\nTotal Amount- " + LMTwithSoundAndWifi.Cost().ToString("C"));
-
+            Console.WriteLine(lightMotorVehicle.GetDescription());
             ObserverBase o1 = new ObserverBase("m");//observer pattern  for the display of uopdates for the vehicle
             newsletter.Attach(o1);
             diagnositics.Attach(o1);
@@ -71,8 +66,10 @@ namespace ONT_PRAC
             HMTwithWifiAndCameraAndSound = new HMT_Camera(HMTwithWifiAndCameraAndSound);
             HMTwithWifiAndCameraAndSound = new HMT_WiFi(HMTwithWifiAndCameraAndSound);
             HMTwithWifiAndCameraAndSound = new HMT_SoundSystem(HMTwithWifiAndCameraAndSound);
-            Console.WriteLine(HMTwithWifiAndCameraAndSound.Description() + "\nTotal Amount- " + HMTwithWifiAndCameraAndSound.Cost().ToString("C"));
-            
+            Console.WriteLine(HMTwithWifiAndCameraAndSound.Description() + "\nTotal Amount - " + HMTwithWifiAndCameraAndSound.Cost().ToString("C"));
+
+            Console.WriteLine(HeavyMotorVehicle.GetDescription());
+
             ObserverBase o2 = new ObserverBase("m");//observer pattern  for the display of uopdates for the vehicle
             newsletter.Attach(o2);
             diagnositics.Attach(o2);
@@ -88,7 +85,7 @@ namespace ONT_PRAC
             Strategy MBTwithWifi = new MotorBikeTechnician();
             MBTwithWifi = new LMT_SoundSystem(MBTwithWifi);
             Console.WriteLine(MBTwithWifi.Description() + "\nTotal Amount- " + MBTwithWifi.Cost().ToString("C"));
-            
+            Console.WriteLine(motorBike.GetDescription());
             //ObserverBase o3 = new ObserverBase("m");//observer pattern  for the display of uopdates for the vehicle 
             //newsletter.Attach(o3);
             //diagnositics.Attach(o3);
@@ -96,7 +93,7 @@ namespace ONT_PRAC
             //newsletter.Notify("Discount of 20%", "Motorbike");
             //newsletter.Detach(o3);
             //diagnositics.Detach(o3);
-            
+
             Console.WriteLine();
             Console.ReadLine();
         }

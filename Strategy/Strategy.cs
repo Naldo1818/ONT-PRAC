@@ -15,7 +15,7 @@ namespace ONT_PRAC.Decorator
     {
         public override string GetDescription()
         {
-            return "Heavy Motor Vehicle:\nGood and Driver";
+            return "Carrier capabilities:Good and Driver\n";
         }
     }
 
@@ -23,7 +23,7 @@ namespace ONT_PRAC.Decorator
     {
         public override string GetDescription()
         {
-            return "Motorbike Vehicle:\n2 people max, and bag";
+            return "Carrier capabilities:2 people max, and bag\n";
         }
     }
 
@@ -31,7 +31,7 @@ namespace ONT_PRAC.Decorator
     {
         public override string GetDescription()
         {
-            return "Light Motor Vehicle:\n5 people max, and few luggage";
+            return "Carrier capabilities:5 people max, and few luggage\n";
         }
     }
 
@@ -39,7 +39,7 @@ namespace ONT_PRAC.Decorator
     {
         public override string GetDescription()
         {
-            return "Light Motor Vehicle:\n20 people max";
+            return "Carrier capabilities:20 people max\n";
         }
     }
 
@@ -47,7 +47,7 @@ namespace ONT_PRAC.Decorator
     {
         public override string GetDescription()
         {
-            return "Heavy Motor Vehicle:\n65 people max";
+            return "Carrier capabilities:65 people max\n";
         }
     }
 
@@ -60,7 +60,7 @@ namespace ONT_PRAC.Decorator
         }
         public override string GetDescription()
         {
-            return vehicleAssemble.GetDescription() + ", has a small engine ";
+            return vehicleAssemble.GetDescription() + "Engine: has a small engine \n";
         }
     }
 
@@ -73,7 +73,7 @@ namespace ONT_PRAC.Decorator
         }
         public override string GetDescription()
         {
-            return vehicleAssemble.GetDescription() + ", has a medium engine ";
+            return vehicleAssemble.GetDescription() + "Engine: has a medium engine\n";
         }
     }
 
@@ -86,7 +86,7 @@ namespace ONT_PRAC.Decorator
         }
         public override string GetDescription()
         {
-            return vehicleAssemble.GetDescription() + ", has a large engine ";
+            return vehicleAssemble.GetDescription() + "Engine: has a large engine\n";
         }
     }
 
@@ -99,7 +99,7 @@ namespace ONT_PRAC.Decorator
         }
         public override string GetDescription()
         {
-            return vehicleAssemble.GetDescription() + ", has an extra large engine ";
+            return vehicleAssemble.GetDescription() + "Engine: has an extra large engine\n";
         }
     }
 
@@ -113,7 +113,7 @@ namespace ONT_PRAC.Decorator
         }
         public override string GetDescription()
         {
-            return vehicleAssemble.GetDescription() + " and cannot tow ";
+            return vehicleAssemble.GetDescription() + "Towing capabilities: and cannot tow ";
         }
     }
 
@@ -126,7 +126,7 @@ namespace ONT_PRAC.Decorator
         }
         public override string GetDescription()
         {
-            return vehicleAssemble.GetDescription() + " and can tow ";
+            return vehicleAssemble.GetDescription() + "Towing capabilities: and can tow ";
         }
     }
 }
