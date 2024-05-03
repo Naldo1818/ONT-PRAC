@@ -43,6 +43,19 @@ namespace ONT_PRAC
             Diagnositics diagnositics = new Diagnositics();
             SoundSystem soundSystem = new SoundSystem();
 
+            string VehicleChoice;
+            Console.Write("What vehicle are you adding? (heavy, light, bike) ");
+            VehicleChoice = Console.ReadLine();
+
+            string SoundSystemChoice;
+            Console.Write("Are you gonna add sound system? (Y/N)");
+            SoundSystemChoice = Console.ReadLine();
+
+            string WIFIChoice;
+            Console.Write("Are you gonna add WIFI? (Y/N)");
+            WIFIChoice = Console.ReadLine();
+            Console.WriteLine();  
+            
             string ChoiceCamera;
             Console.Write("Do you want to add a Camera to your Car (Y/N)? ");
             ChoiceCamera = Console.ReadLine();
@@ -52,121 +65,194 @@ namespace ONT_PRAC
                 Console.WriteLine("Camera will be added");
             }
 
-            string VehicleChoice;
-            Console.Write("What vehicle are you adding? ");
-            VehicleChoice = Console.ReadLine();
-
-            string SoundSystemChoice;
-            Console.Write("Are you gonna add sound system? ");
-            SoundSystemChoice = Console.ReadLine();
-
-            string WIFIChoice;
-            Console.Write("Are you gonna add WIFI? ");
-            WIFIChoice = Console.ReadLine();
-            Console.WriteLine();  
+            
 
 
             if (VehicleChoice.ToLower() =="light")
             {
-                Strategy LMTwithSoundAndWifi = new LightMotorTechnician();//Decorator pattern  for the display
+                ObserverBase o1 = new ObserverBase("m");
+                newsletter.Attach(o1);
+                diagnositics.Attach(o1);
+                soundSystem.Attach(o1);
+                Strategy LMT = new LightMotorTechnician();//Decorator pattern  for the display
 
                 if (SoundSystemChoice.ToLower() == "y" && WIFIChoice.ToLower()=="y")
                 {
-                    LMTwithSoundAndWifi = new LMT_SoundSystem(LMTwithSoundAndWifi);
-                    LMTwithSoundAndWifi = new LMT_WiFi(LMTwithSoundAndWifi);
-
-
+                    LMT = new LMT_SoundSystem(LMT);
+                    LMT = new LMT_WiFi(LMT);
+                    Console.WriteLine();
+                    diagnositics.Notify("Diagnosis", "Light Motor Vehicle");
+                    newsletter.Notify("Discount of 20%", "Light Motor Vehicle");
+                    soundSystem.Notify("Update of Sound System", "Light Motor Vehicle");
+                    Console.WriteLine();
                 }
 
                 if (SoundSystemChoice.ToLower() == "n" && WIFIChoice.ToLower() == "n")
                 {
-                    string soundsystemanswe;
-                    string wifianswer;
-                    LMTwithSoundAndWifi = new LMT_SoundSystem(LMTwithSoundAndWifi);
-                    wifianswer = "Wifi not added";
+
+                    LMT = new LMT_SoundSystem(LMT);
+                    Console.WriteLine();
+
+                }
+
+                if (SoundSystemChoice.ToLower() == "n" && WIFIChoice.ToLower() == "y")
+                {
+
+                    LMT = new LMT_WiFi(LMT);
+                    Console.WriteLine();
+                    diagnositics.Notify("Diagnosis", "Light Motor Vehicle");
+                    newsletter.Notify("Discount of 20%", "Light Motor Vehicle");
+                    Console.WriteLine();
 
                 }
 
                 if (SoundSystemChoice.ToLower() == "y" && WIFIChoice.ToLower() == "n")
                 {
-                    string wifianswer;
-                    LMTwithSoundAndWifi = new LMT_SoundSystem(LMTwithSoundAndWifi);
-                    wifianswer = "Wifi not added";
-
-                }
-
-                if (SoundSystemChoice.ToLower() == "y" && WIFIChoice.ToLower() == "n")
-                {
-                    string wifianswer;
-                    LMTwithSoundAndWifi = new LMT_SoundSystem(LMTwithSoundAndWifi);
-                    wifianswer = "Wifi not added";
-              
+                    LMT = new LMT_SoundSystem(LMT);
+                    Console.WriteLine();
+                    soundSystem.Notify("Update of Sound System", "Light Motor Vehicle");
+                    Console.WriteLine();
                 }
 
 
 
 
 
-                LMTwithSoundAndWifi = new LMT_WiFi(LMTwithSoundAndWifi);
-                Console.WriteLine(LMTwithSoundAndWifi.Description() + "\nTotal Amount- " + LMTwithSoundAndWifi.Cost().ToString("C"));
-
+                Console.WriteLine(LMT.Description() + "\nTotal Amount- " + LMT.Cost().ToString("C"));
+                Console.WriteLine();
                 Console.WriteLine(lightMotorVehicle.GetDescription());
 
 
                 //Observer functions
-                ObserverBase o1 = new ObserverBase("m");//observer pattern  for the display of uopdates for the vehicle
-                newsletter.Attach(o1);
-                diagnositics.Attach(o1);
-                soundSystem.Attach(o1);
-                diagnositics.Notify("Diagnosis", "Light Motor Vehicle");
-                newsletter.Notify("Discount of 20%", "Light Motor Vehicle");
-                soundSystem.Notify("Update of Sound System", "Light Motor Vehicle");
+                //observer pattern  for the display of uopdates for the vehicle
+                
+                
                 newsletter.Detach(o1);
                 diagnositics.Detach(o1);
                 soundSystem.Detach(o1);
                 Console.WriteLine();
+                
+                //end of light motor vehicle
             }
 
-//end of light motor vehicle
+
             if (VehicleChoice.ToLower() == "heavy")
             { 
-                Strategy HMTwithWifiAndCameraAndSound = new HeavyMotorTechnician();//Decorator pattern  for the display
-            HMTwithWifiAndCameraAndSound = new HMT_Camera(HMTwithWifiAndCameraAndSound);
-            HMTwithWifiAndCameraAndSound = new HMT_WiFi(HMTwithWifiAndCameraAndSound);
-            HMTwithWifiAndCameraAndSound = new HMT_SoundSystem(HMTwithWifiAndCameraAndSound);
-            Console.WriteLine(HMTwithWifiAndCameraAndSound.Description() + "\nTotal Amount - " + HMTwithWifiAndCameraAndSound.Cost().ToString("C"));
+                Strategy HMT = new HeavyMotorTechnician();//Decorator pattern  for the display
+                ObserverBase o2 = new ObserverBase("m");//observer pattern  for the display of uopdates for the vehicle
+                newsletter.Attach(o2);
+                diagnositics.Attach(o2);
+                soundSystem.Attach(o2);
 
-            Console.WriteLine(HeavyMotorVehicle.GetDescription());
+                if (SoundSystemChoice.ToLower() == "y" && WIFIChoice.ToLower() == "y")
+                {
+                    HMT = new HMT_SoundSystem(HMT);
+                    HMT = new HMT_WiFi(HMT);
+                    Console.WriteLine();
+                    diagnositics.Notify("Diagnosis", "Heavy Motor Vehicle");
+                    newsletter.Notify("Discount of 20%", "Heavy Motor Vehicle");
+                    soundSystem.Notify("Update of Sound System", "Heavy Motor Vehicle");
+                    Console.WriteLine();
+                }
+
+                if (SoundSystemChoice.ToLower() == "n" && WIFIChoice.ToLower() == "n")
+                {
+
+                    HMT = new HMT_WiFi(HMT);
+                    Console.WriteLine();
+
+                }
+
+                if (SoundSystemChoice.ToLower() == "n" && WIFIChoice.ToLower() == "y")
+                {
+
+                    HMT = new HMT_WiFi(HMT);
+                    Console.WriteLine();
+                    diagnositics.Notify("Diagnosis", "Heavy Motor Vehicle");
+                    newsletter.Notify("Discount of 20%", "Heavy Motor Vehicle");
+                    Console.WriteLine();
+
+                }
+
+                if (SoundSystemChoice.ToLower() == "y" && WIFIChoice.ToLower() == "n")
+                {
+                    HMT = new HMT_SoundSystem(HMT);
+                    Console.WriteLine();
+                    soundSystem.Notify("Update of Sound System", "Heavy Motor Vehicle");
+                    Console.WriteLine();
+                }
+
+                
+
+                Console.WriteLine(HMT.Description() + "\nTotal Amount - " + HMT.Cost().ToString("C"));
+                Console.WriteLine();
+                Console.WriteLine(HeavyMotorVehicle.GetDescription());
 
 
-            ObserverBase o2 = new ObserverBase("m");//observer pattern  for the display of uopdates for the vehicle
-            newsletter.Attach(o2);
-            diagnositics.Attach(o2);
-            soundSystem.Attach(o2);
-            diagnositics.Notify("Diagnosis", "Heavy Motor Vehicle");
-            newsletter.Notify("Discount of 20%", "Heavy Motor Vehicle");
-            soundSystem.Notify("Update of Sound System", "Heavy Motor Vehicle");
-            newsletter.Detach(o2);
-            diagnositics.Detach(o2);
-            soundSystem.Detach(o2);
-            Console.WriteLine();
+                
+                
+                newsletter.Detach(o2);
+                diagnositics.Detach(o2);
+                soundSystem.Detach(o2);
+                Console.WriteLine();
             }
 
 
 
             if (VehicleChoice.ToLower() == "bike")
             {
-                Strategy MBTwithWifi = new MotorBikeTechnician();
-                MBTwithWifi = new LMT_SoundSystem(MBTwithWifi);
-                Console.WriteLine(MBTwithWifi.Description() + "\nTotal Amount- " + MBTwithWifi.Cost().ToString("C"));
+                Strategy Bike = new MotorBikeTechnician();
+                ObserverBase o3 = new ObserverBase("m");//observer pattern  for the display of uopdates for the vehicle 
+                newsletter.Attach(o3);
+                diagnositics.Attach(o3);
+                soundSystem.Attach(o3);
+
+                if (SoundSystemChoice.ToLower() == "y" && WIFIChoice.ToLower() == "y")
+                {
+                    Bike = new HMT_SoundSystem(Bike);
+                    Bike = new HMT_WiFi(Bike);
+                    Console.WriteLine();
+                    diagnositics.Notify("Diagnosis", "Heavy Motor Vehicle");
+                    newsletter.Notify("Discount of 20%", "Heavy Motor Vehicle");
+                    soundSystem.Notify("Update of Sound System", "Heavy Motor Vehicle");
+                    Console.WriteLine();
+                }
+
+                if (SoundSystemChoice.ToLower() == "n" && WIFIChoice.ToLower() == "n")
+                {
+
+                    Bike = new HMT_WiFi(Bike);
+                    Console.WriteLine();
+
+                }
+
+                if (SoundSystemChoice.ToLower() == "n" && WIFIChoice.ToLower() == "y")
+                {
+
+                    Bike = new HMT_WiFi(Bike);
+                    Console.WriteLine();
+                    diagnositics.Notify("Diagnosis", "Heavy Motor Vehicle");
+                    newsletter.Notify("Discount of 20%", "Heavy Motor Vehicle");
+                    Console.WriteLine();
+
+                }
+
+                if (SoundSystemChoice.ToLower() == "y" && WIFIChoice.ToLower() == "n")
+                {
+                    Bike = new HMT_SoundSystem(Bike);
+                    Console.WriteLine();
+                    soundSystem.Notify("Update of Sound System", "Heavy Motor Vehicle");
+                    Console.WriteLine();
+                }
+
+                Console.WriteLine(Bike.Description() + "\nTotal Amount- " + Bike.Cost().ToString("C"));
                 Console.WriteLine(motorBike.GetDescription());
-                //ObserverBase o3 = new ObserverBase("m");//observer pattern  for the display of uopdates for the vehicle 
-                //newsletter.Attach(o3);
-                //diagnositics.Attach(o3);
-                //diagnositics.Notify("Diagnosis", "Motorbike");
-                //newsletter.Notify("Discount of 20%", "Motorbike");
-                //newsletter.Detach(o3);
-                //diagnositics.Detach(o3);
+                
+                
+                
+                soundSystem.Detach(o3);
+                newsletter.Detach(o3);
+                diagnositics.Detach(o3);
 
                 Console.WriteLine();
             }
