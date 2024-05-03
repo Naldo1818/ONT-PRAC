@@ -20,11 +20,7 @@ namespace ONT_PRAC
             VehicleAssemble HeavyMotorVehicle = new Twenty_People();
             VehicleAssemble HeavyMotorVehicle3 = new SixtyFive_People();
 
-           
-            motorBike = new Small_Engine(motorBike);
-            motorBike = new CannotTow(motorBike);
-
-           
+                      
             motorBike = new Small_Engine(motorBike);
             motorBike = new CannotTow(motorBike);
 
@@ -49,15 +45,15 @@ namespace ONT_PRAC
             SoundSystem soundSystem = new SoundSystem();
 
             string VehicleChoice;
-            Console.Write("What vehicle are you adding? (heavy, light, bike) ");
+            Console.Write("What vehicle are you adding? (heavy, light, bike): ");
             VehicleChoice = Console.ReadLine();
 
             string SoundSystemChoice;
-            Console.Write("Are you gonna add sound system? (Y/N)");
+            Console.Write("Are you gonna add sound system? (Y/N): ");
             SoundSystemChoice = Console.ReadLine();
 
             string WIFIChoice;
-            Console.Write("Are you gonna add WIFI? (Y/N)");
+            Console.Write("Are you gonna add WIFI? (Y/N): ");
             WIFIChoice = Console.ReadLine();
            
             
@@ -266,9 +262,9 @@ namespace ONT_PRAC
                     MBT = new MBT_WiFi(MBT);
                     MBT = new MBT_SoundSystem(MBT);
                     Console.WriteLine();
-                    diagnositics.Notify("Diagnosis", "Heavy Motor Vehicle");
-                    newsletter.Notify("Discount of 20%", "HeavyMotor Vehicle");
-                    soundSystem.Notify("Update of Sound System", "Heavy Motor Vehicle");
+                    diagnositics.Notify("Diagnosis", "MotorBike Vehicle");
+                    newsletter.Notify("Discount of 20%", "MotorBike Vehicle");
+                    soundSystem.Notify("Update of Sound System", "MotorBike Vehicle");
                     Console.WriteLine();
                 }
 
@@ -277,8 +273,8 @@ namespace ONT_PRAC
                     MBT = new MBT_Camera(MBT);
                     MBT = new MBT_WiFi(MBT);
                     Console.WriteLine();
-                    diagnositics.Notify("Diagnosis", "Heavy Motor Vehicle");
-                    newsletter.Notify("Discount of 20%", "Heavy Motor Vehicle");
+                    diagnositics.Notify("Diagnosis", "MotorBike Vehicle");
+                    newsletter.Notify("Discount of 20%", "MotorBike Vehicle");
                     Console.WriteLine();
 
                 }
@@ -296,9 +292,9 @@ namespace ONT_PRAC
                     MBT = new MBT_WiFi(MBT);
 
                     Console.WriteLine();
-                    diagnositics.Notify("Diagnosis", "Heavy Motor Vehicle");
-                    newsletter.Notify("Discount of 20%", "Heavy Motor Vehicle");
-                    soundSystem.Notify("Update of Sound System", "Heavy Motor Vehicle");
+                    diagnositics.Notify("Diagnosis", "MotorBike Vehicle");
+                    newsletter.Notify("Discount of 20%", "MotorBike Vehicle");
+                    soundSystem.Notify("Update of Sound System", "MotorBike Vehicle");
                     Console.WriteLine();
                 }
 
@@ -307,8 +303,8 @@ namespace ONT_PRAC
 
                     MBT = new MBT_WiFi(MBT);
                     Console.WriteLine();
-                    diagnositics.Notify("Diagnosis", "Heavy Motor Vehicle");
-                    newsletter.Notify("Discount of 20%", "Heavy Motor Vehicle");
+                    diagnositics.Notify("Diagnosis", "MotorBike Vehicle");
+                    newsletter.Notify("Discount of 20%", "MotorBike Vehicle");
                     Console.WriteLine();
 
                 }
