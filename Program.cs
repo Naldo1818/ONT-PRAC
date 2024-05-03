@@ -19,8 +19,7 @@ namespace ONT_PRAC
             VehicleAssemble lightMotorVehicle = new Five_People_and_luggage();
             VehicleAssemble HeavyMotorVehicle = new Twenty_People();
             VehicleAssemble HeavyMotorVehicle3 = new SixtyFive_People();
-
-                      
+     
             motorBike = new Small_Engine(motorBike);
             motorBike = new CannotTow(motorBike);
 
