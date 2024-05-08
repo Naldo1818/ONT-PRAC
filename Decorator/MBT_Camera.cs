@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace ONT_PRAC.Decorator
 {
-    class MBT_Camera : CondimentDecorator
+    class MBT_Camera : AdditionsDecorator
     {
-        Strategy additions;
-        public MBT_Camera(Strategy additions) : base(additions)
+        Additions additions;
+        public MBT_Camera(Additions additions) : base(additions)
         {
             this.additions = additions;
         }

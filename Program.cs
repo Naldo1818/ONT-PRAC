@@ -70,11 +70,11 @@ namespace ONT_PRAC
 
             if (VehicleChoice.ToLower() =="light")
             {
-                ObserverBase o1 = new ObserverBase("m");
+                Notification o1 = new Notification("m");
                 newsletter.Attach(o1);
                 diagnositics.Attach(o1);
                 soundSystem.Attach(o1);
-                Strategy LMT = new LightMotorTechnician();//Decorator pattern  for the display
+                Additions LMT = new LightMotorTechnician();//Decorator pattern  for the display
 
                 if (SoundSystemChoice.ToLower() == "y" && WIFIChoice.ToLower()=="y")
                 {
@@ -138,8 +138,8 @@ namespace ONT_PRAC
 
             if (VehicleChoice.ToLower() == "heavy")
             { 
-                Strategy HMT = new HeavyMotorTechnician();//Decorator pattern  for the display
-                ObserverBase o2 = new ObserverBase("m");//observer pattern  for the display of uopdates for the vehicle
+                Additions HMT = new HeavyMotorTechnician();//Decorator pattern  for the display
+                Notification o2 = new Notification("m");//observer pattern  for the display of uopdates for the vehicle
                 newsletter.Attach(o2);
                 diagnositics.Attach(o2);
                 soundSystem.Attach(o2);
@@ -201,8 +201,8 @@ namespace ONT_PRAC
 
             if (VehicleChoice.ToLower() == "bike")
             {
-                Strategy Bike = new MotorBikeTechnician();
-                ObserverBase o3 = new ObserverBase("m");//observer pattern  for the display of uopdates for the vehicle 
+                Additions Bike = new MotorBikeTechnician();
+                Notification o3 = new Notification("m");//observer pattern  for the display of uopdates for the vehicle 
                 newsletter.Attach(o3);
                 diagnositics.Attach(o3);
                 soundSystem.Attach(o3);

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ONT_PRAC.Decorator
 {
-     class MotorBikeTechnician:Strategy
+     class MotorBikeTechnician:Additions
     {
         public override string Description()
         {

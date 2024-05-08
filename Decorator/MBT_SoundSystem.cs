@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace ONT_PRAC.Decorator
 {
-    class MBT_SoundSystem : CondimentDecorator
+    class MBT_SoundSystem : AdditionsDecorator
     {
-        Strategy additions;
-        public MBT_SoundSystem(Strategy additions) : base(additions)
+        Additions additions;
+        public MBT_SoundSystem(Additions additions) : base(additions)
         {
             this.additions = additions;
         }
