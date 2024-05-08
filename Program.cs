@@ -239,9 +239,9 @@ namespace ONT_PRAC
                 //observer pattern  for the display of uopdates for the vehicle
 
 
-                newsletter.Detach(o1);
-                diagnositics.Detach(o1);
-                soundSystem.Detach(o1);
+                newsletter.Detach(o2);
+                diagnositics.Detach(o2);
+                soundSystem.Detach(o2);
                 Console.WriteLine();
 
                 //end of light motor vehicle
@@ -257,9 +257,9 @@ namespace ONT_PRAC
 
                 if (SoundSystemChoice.ToLower() == "y" && WIFIChoice.ToLower() == "y" && ChoiceCamera.ToLower() == "y")
                 {
-                    MBT = new MBT_Camera(MBT);
-                    MBT = new MBT_WiFi(MBT);
-                    MBT = new MBT_SoundSystem(MBT);
+                    Bike = new MBT_Camera(Bike);
+                    Bike = new MBT_WiFi(Bike);
+                    Bike = new MBT_SoundSystem(Bike);
                     Console.WriteLine();
                     diagnositics.Notify("Diagnosis", "MotorBike Vehicle");
                     newsletter.Notify("Discount of 20%", "MotorBike Vehicle");
@@ -269,8 +269,8 @@ namespace ONT_PRAC
 
                 if (SoundSystemChoice.ToLower() == "n" && WIFIChoice.ToLower() == "y" && ChoiceCamera.ToLower() == "y")
                 {
-                    MBT = new MBT_Camera(MBT);
-                    MBT = new MBT_WiFi(MBT);
+                    Bike = new MBT_Camera(Bike);
+                    Bike = new MBT_WiFi(Bike);
                     Console.WriteLine();
                     diagnositics.Notify("Diagnosis", "MotorBike Vehicle");
                     newsletter.Notify("Discount of 20%", "MotorBike Vehicle");
@@ -280,15 +280,15 @@ namespace ONT_PRAC
 
                 if (SoundSystemChoice.ToLower() == "y" && WIFIChoice.ToLower() == "n" && ChoiceCamera.ToLower() == "y")
                 {
-                    MBT = new MBT_Camera(MBT);
-                    MBT = new MBT_SoundSystem(MBT);
+                    Bike = new MBT_Camera(Bike);
+                    Bike = new MBT_SoundSystem(Bike);
                     Console.WriteLine();
                 }
 
                 if (SoundSystemChoice.ToLower() == "y" && WIFIChoice.ToLower() == "y" && ChoiceCamera.ToLower() == "n")
                 {
-                    MBT = new MBT_SoundSystem(MBT);
-                    MBT = new MBT_WiFi(MBT);
+                    Bike = new MBT_SoundSystem(Bike);
+                    Bike = new MBT_WiFi(Bike);
 
                     Console.WriteLine();
                     diagnositics.Notify("Diagnosis", "MotorBike Vehicle");
@@ -300,7 +300,7 @@ namespace ONT_PRAC
                 if (SoundSystemChoice.ToLower() == "n" && WIFIChoice.ToLower() == "y" && ChoiceCamera.ToLower() == "n")
                 {
 
-                    MBT = new MBT_WiFi(MBT);
+                    Bike = new MBT_WiFi(Bike);
                     Console.WriteLine();
                     diagnositics.Notify("Diagnosis", "MotorBike Vehicle");
                     newsletter.Notify("Discount of 20%", "MotorBike Vehicle");
@@ -310,19 +310,19 @@ namespace ONT_PRAC
 
                 if (SoundSystemChoice.ToLower() == "y" && WIFIChoice.ToLower() == "n" && ChoiceCamera.ToLower() == "n")
                 {
-                    MBT = new MBT_SoundSystem(MBT);
+                    Bike = new MBT_SoundSystem(Bike);
                     Console.WriteLine();
                 }
 
                 if (SoundSystemChoice.ToLower() == "n" && WIFIChoice.ToLower() == "n" && ChoiceCamera.ToLower() == "y")
                 {
 
-                    MBT = new MBT_Camera(MBT);
+                    Bike = new MBT_Camera(Bike);
                     Console.WriteLine();
 
                 }
 
-                Console.WriteLine(MBT.Description() + "\nTotal Amount- " + MBT.Cost().ToString("C"));
+                Console.WriteLine(Bike.Description() + "\nTotal Amount- " + Bike.Cost().ToString("C"));
                 Console.WriteLine();
                 Console.WriteLine(motorBike.GetDescription());
 
@@ -331,9 +331,9 @@ namespace ONT_PRAC
                 //observer pattern  for the display of uopdates for the vehicle
 
 
-                newsletter.Detach(o1);
-                diagnositics.Detach(o1);
-                soundSystem.Detach(o1);
+                newsletter.Detach(o3);
+                diagnositics.Detach(o3);
+                soundSystem.Detach(o3);
                 Console.WriteLine();
 
                 //end of Bike motor vehicle
