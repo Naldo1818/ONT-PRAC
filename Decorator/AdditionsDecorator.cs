@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace ONT_PRAC.Decorator
 {
-    abstract class CondimentDecorator : Strategy //DecoratorBase
+    abstract class AdditionsDecorator : Additions //DecoratorBase
     {
-        Strategy Additions = null;
-        public CondimentDecorator(Strategy additions)
+        Additions Additions = null;
+        public AdditionsDecorator(Additions additions)
         {
             this.Additions = additions;
         }

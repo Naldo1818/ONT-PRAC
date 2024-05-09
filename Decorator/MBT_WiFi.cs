@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace ONT_PRAC.Decorator
 {
-    class MBT_WiFi : CondimentDecorator
+    class MBT_WiFi : AdditionsDecorator
     {
-        Strategy additions;
-        public MBT_WiFi(Strategy additions) : base(additions)
+        Additions additions;
+        public MBT_WiFi(Additions additions) : base(additions)
         {
             this.additions = additions;
         }

@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 namespace ONT_PRAC.Observer
 {
     //concrete observer
-    public class ObserverBase:IObserver
+    public class Notification:IObserver
     {
         private string _newsletter;
-        public ObserverBase(string NewsMessage)
+        public Notification(string NewsMessage)
         {
             this._newsletter = NewsMessage;
         }
