@@ -29,8 +29,7 @@ namespace ONT_PRAC
             HeavyMotorVehicle = new Large_Engine(HeavyMotorVehicle);
             HeavyMotorVehicle = new CannotTow(HeavyMotorVehicle);
 
-            //HeavyMotorVehicle2 = new Extra_Large_Engine(HeavyMotorVehicle2);
-            //HeavyMotorVehicle2 = new CanTow(HeavyMotorVehicle2);
+           
 
             HeavyMotorVehicle3 = new Extra_Large_Engine(HeavyMotorVehicle3);
             HeavyMotorVehicle3 = new CanTow(HeavyMotorVehicle3);
@@ -44,8 +43,27 @@ namespace ONT_PRAC
             SoundSystem soundSystem = new SoundSystem();
 
             string VehicleChoice;
+            Console.WriteLine("Vehicle Assemble");
+            Console.WriteLine("================================================")
+
             Console.Write("What vehicle are you adding? (heavy, light, bike): ");
             VehicleChoice = Console.ReadLine();
+            Console.WriteLine();
+
+            if (VehicleChoice == "heavy" || VehicleChoice == "Heavy")
+            {
+                Console.WriteLine("Add extra features to you Heavy Motor Vehicle");
+            }
+
+            else if (VehicleChoice == "light" || VehicleChoice == "Light")
+            {
+                Console.WriteLine("Add extra features to you Light Motor Vehicle");
+            }
+
+            else (VehicleChoice == "bike" || VehicleChoice == "Bike")
+            {
+                Console.WriteLine("Add extra features to you Motorbike Vehicle");
+            }
 
             string SoundSystemChoice;
             Console.Write("Are you gonna add sound system? (Y/N): ");
@@ -138,7 +156,7 @@ namespace ONT_PRAC
 
                 }
 
-                Console.WriteLine(LMT.Description() + "\nTotal Amount- " + LMT.Cost().ToString("C"));
+                Console.WriteLine(LMT.Description() + "\nTotal Amount: " + LMT.Cost().ToString("C"));
                 Console.WriteLine();
                 Console.WriteLine(lightMotorVehicle.GetDescription());
 
@@ -230,7 +248,7 @@ namespace ONT_PRAC
 
                 }
 
-                Console.WriteLine(HMT.Description() + "\nTotal Amount- " + HMT.Cost().ToString("C"));
+                Console.WriteLine(HMT.Description() + "\nTotal Amount: " + HMT.Cost().ToString("C"));
                 Console.WriteLine();
                 Console.WriteLine(lightMotorVehicle.GetDescription());
 
@@ -322,7 +340,7 @@ namespace ONT_PRAC
 
                 }
 
-                Console.WriteLine(MBT.Description() + "\nTotal Amount- " + MBT.Cost().ToString("C"));
+                Console.WriteLine(MBT.Description() + "\nTotal Amount: " + MBT.Cost().ToString("C"));
                 Console.WriteLine();
                 Console.WriteLine(motorBike.GetDescription());
 
