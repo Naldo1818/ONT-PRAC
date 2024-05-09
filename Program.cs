@@ -44,7 +44,7 @@ namespace ONT_PRAC
 
             string VehicleChoice;
             Console.WriteLine("Vehicle Assemble");
-            Console.WriteLine("================================================")
+            Console.WriteLine("================================================");
 
             Console.Write("What vehicle are you adding? (heavy, light, bike): ");
             VehicleChoice = Console.ReadLine();
@@ -60,7 +60,7 @@ namespace ONT_PRAC
                 Console.WriteLine("Add extra features to you Light Motor Vehicle");
             }
 
-            else (VehicleChoice == "bike" || VehicleChoice == "Bike")
+            else if(VehicleChoice == "bike" || VehicleChoice == "Bike")
             {
                 Console.WriteLine("Add extra features to you Motorbike Vehicle");
             }
