@@ -52,7 +52,7 @@
     <Compile Include="Decorator\HMT_WiFi.cs" />
     <Compile Include="Decorator\MBT_WiFi.cs" />
     <Compile Include="Decorator\MBT_SoundSystem.cs" />
-    <Compile Include="Decorator\CondimentDecorator.cs" />
+    <Compile Include="Decorator\AdditionsDecorator.cs" />
     <Compile Include="Decorator\Additions.cs" />
     <Compile Include="Decorator\LightMotorTechnician.cs" />
     <Compile Include="Decorator\Heavy Motor Technician.cs" />
@@ -60,7 +60,7 @@
     <Compile Include="Observer\Diagnositics.cs" />
     <Compile Include="Observer\Newsletter.cs" />
     <Compile Include="Observer\Observer.cs" />
-    <Compile Include="Observer\ObserverBase.cs" />
+    <Compile Include="Observer\Notification.cs" />
     <Compile Include="Observer\SoundSystem.cs" />
     <Compile Include="Observer\SubjectBase.cs" />
     <Compile Include="Program.cs" />

@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace ONT_PRAC.Decorator
 {
-    class LMT_SoundSystem : CondimentDecorator
+    class LMT_SoundSystem : AdditionsDecorator
     {
-        Strategy additions;
-        public LMT_SoundSystem(Strategy additions) : base(additions)
+        Additions additions;
+        public LMT_SoundSystem(Additions additions) : base(additions)
         {
             this.additions = additions;
         }
