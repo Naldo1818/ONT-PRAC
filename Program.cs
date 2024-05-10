@@ -15,11 +15,11 @@ namespace ONT_PRAC
         {   //Strategy
 
             VehicleAssemble motorBike = new Two_People_and_bag();
-            VehicleAssemble motorBike2 = new Good_Driver_Carrier();
+            VehicleAssemble HeavyMotorVehicle = new Good_Driver_Carrier();
             VehicleAssemble lightMotorVehicle = new Five_People_and_luggage();
-            VehicleAssemble HeavyMotorVehicle = new Twenty_People();
-            VehicleAssemble HeavyMotorVehicle3 = new SixtyFive_People();
-     
+            VehicleAssemble lightMotorVehicle2 = new Twenty_People();
+            VehicleAssemble HeavyMotorVehicle2 = new SixtyFive_People();
+
             motorBike = new Small_Engine(motorBike);
             motorBike = new CannotTow(motorBike);
 
@@ -29,19 +29,16 @@ namespace ONT_PRAC
             HeavyMotorVehicle = new Large_Engine(HeavyMotorVehicle);
             HeavyMotorVehicle = new CannotTow(HeavyMotorVehicle);
 
-           
+            lightMotorVehicle2 = new Medium_Engine(lightMotorVehicle2);
+            lightMotorVehicle2 = new CanTow(lightMotorVehicle2);
 
-            HeavyMotorVehicle3 = new Extra_Large_Engine(HeavyMotorVehicle3);
-            HeavyMotorVehicle3 = new CanTow(HeavyMotorVehicle3);
+            HeavyMotorVehicle2 = new Extra_Large_Engine(HeavyMotorVehicle2);
+            HeavyMotorVehicle2 = new CanTow(HeavyMotorVehicle2)
 
-            // Print descriptions of decorated vehicle assemblies              
-            //Console.WriteLine(HeavyMotorVehicle2.GetDescription());
-            //Console.WriteLine(HeavyMotorVehicle3.GetDescription());
-                 
+
             Newsletter newsletter = new Newsletter();//calling the types of update notifications
             Diagnositics diagnositics = new Diagnositics();
             SoundSystem soundSystem = new SoundSystem();
-
             string VehicleChoice;
             Console.WriteLine("Vehicle Assemble");
             Console.WriteLine("================================================");
@@ -50,22 +47,56 @@ namespace ONT_PRAC
             VehicleChoice = Console.ReadLine();
             Console.WriteLine();
 
+            string carrier;
+
             if (VehicleChoice == "heavy" || VehicleChoice == "Heavy")
             {
+                Console.Write("Choose carrier capability, Goods or People: ");
+                carrier = Console.ReadLine();
+
+                if (carrier.ToLower() == "goods")
+                {
+                    Console.WriteLine(HeavyMotorVehicle.GetDescription());
+                    Console.ReadLine();
+                }
+
+                else if (carrier.ToLower() == "people")
+                {
+                    Console.WriteLine(HeavyMotorVehicle2.GetDescription());
+                    Console.ReadLine();
+                }
+
                 Console.WriteLine("Add extra features to you Heavy Motor Vehicle");
             }
 
             else if (VehicleChoice == "light" || VehicleChoice == "Light")
             {
+                Console.Write("Choose carrier capability, 5 people or 20 People(Enter 20 or 5): ");
+                carrier = Console.ReadLine();
+
+                if (carrier.ToLower() == "5")
+                {
+                    Console.WriteLine(lightMotorVehicle.GetDescription());
+                    Console.ReadLine();
+                }
+
+                else if (carrier.ToLower() == "20")
+                {
+                    Console.WriteLine(lightMotorVehicle2.GetDescription());
+                    Console.ReadLine();
+                }
                 Console.WriteLine("Add extra features to you Light Motor Vehicle");
             }
 
-            else if(VehicleChoice == "bike" || VehicleChoice == "Bike")
+            else if (VehicleChoice == "bike" || VehicleChoice == "Bike")
             {
+                Console.WriteLine(motorBike.GetDescription());
+                Console.ReadLine();
                 Console.WriteLine("Add extra features to you Motorbike Vehicle");
             }
+        }
 
-            string SoundSystemChoice;
+        string SoundSystemChoice;
             Console.Write("Are you gonna add sound system? (Y/N): ");
             SoundSystemChoice = Console.ReadLine();
 
@@ -158,8 +189,6 @@ namespace ONT_PRAC
 
                 Console.WriteLine(LMT.Description() + "\nTotal Amount: " + LMT.Cost().ToString("C"));
                 Console.WriteLine();
-                Console.WriteLine(lightMotorVehicle.GetDescription());
-
 
                 //Observer functions
                 //observer pattern  for the display of uopdates for the vehicle
@@ -250,8 +279,6 @@ namespace ONT_PRAC
 
                 Console.WriteLine(HMT.Description() + "\nTotal Amount: " + HMT.Cost().ToString("C"));
                 Console.WriteLine();
-                Console.WriteLine(lightMotorVehicle.GetDescription());
-
 
                 //Observer functions
                 //observer pattern  for the display of uopdates for the vehicle
@@ -342,8 +369,6 @@ namespace ONT_PRAC
 
                 Console.WriteLine(Bike.Description() + "\nTotal Amount- " + Bike.Cost().ToString("C"));
                 Console.WriteLine();
-                Console.WriteLine(motorBike.GetDescription());
-
 
                 //Observer functions
                 //observer pattern  for the display of uopdates for the vehicle
