@@ -33,7 +33,7 @@ namespace ONT_PRAC
             lightMotorVehicle2 = new CanTow(lightMotorVehicle2);
 
             HeavyMotorVehicle2 = new Extra_Large_Engine(HeavyMotorVehicle2);
-            HeavyMotorVehicle2 = new CanTow(HeavyMotorVehicle2)
+            HeavyMotorVehicle2 = new CanTow(HeavyMotorVehicle2);
 
 
             Newsletter newsletter = new Newsletter();//calling the types of update notifications
@@ -94,25 +94,25 @@ namespace ONT_PRAC
                 Console.ReadLine();
                 Console.WriteLine("Add extra features to you Motorbike Vehicle");
             }
-        }
 
-        string SoundSystemChoice;
+
+            string SoundSystemChoice;
             Console.Write("Are you gonna add sound system? (Y/N): ");
             SoundSystemChoice = Console.ReadLine();
 
             string WIFIChoice;
             Console.Write("Are you gonna add WIFI? (Y/N): ");
             WIFIChoice = Console.ReadLine();
-           
-            
+
+
             string ChoiceCamera;
             Console.Write("Do you want to add a Camera to your Car (Y/N)? ");
             ChoiceCamera = Console.ReadLine();
-            Console.WriteLine();  
-          
-          
+            Console.WriteLine();
 
-            if (VehicleChoice.ToLower() =="light")
+
+
+            if (VehicleChoice.ToLower() == "light")
             {
                 Notification o1 = new Notification("m");
                 newsletter.Attach(o1);
@@ -120,7 +120,7 @@ namespace ONT_PRAC
                 soundSystem.Attach(o1);
                 Additions LMT = new LightMotorTechnician();//Decorator pattern  for the display
 
-                if (SoundSystemChoice.ToLower() == "y" && WIFIChoice.ToLower()=="y" && ChoiceCamera.ToLower() == "y")
+                if (SoundSystemChoice.ToLower() == "y" && WIFIChoice.ToLower() == "y" && ChoiceCamera.ToLower() == "y")
                 {
                     LMT = new LMT_SoundSystem(LMT);
                     LMT = new LMT_WiFi(LMT);
@@ -154,7 +154,7 @@ namespace ONT_PRAC
                 {
                     LMT = new LMT_SoundSystem(LMT);
                     LMT = new LMT_WiFi(LMT);
-                    
+
                     Console.WriteLine();
                     diagnositics.Notify("Diagnosis", "Light Motor Vehicle");
                     newsletter.Notify("Discount of 20%", "Light Motor Vehicle");
@@ -164,7 +164,7 @@ namespace ONT_PRAC
 
                 if (SoundSystemChoice.ToLower() == "n" && WIFIChoice.ToLower() == "y" && ChoiceCamera.ToLower() == "n")
                 {
-                    
+
                     LMT = new LMT_WiFi(LMT);
                     Console.WriteLine();
                     diagnositics.Notify("Diagnosis", "Light Motor Vehicle");
@@ -192,18 +192,18 @@ namespace ONT_PRAC
 
                 //Observer functions
                 //observer pattern  for the display of uopdates for the vehicle
-                
-                
+
+
                 newsletter.Detach(o1);
                 diagnositics.Detach(o1);
                 soundSystem.Detach(o1);
                 Console.WriteLine();
-                
+
                 //end of light motor vehicle
             }
 
             if (VehicleChoice.ToLower() == "heavy")
-            { 
+            {
                 Additions HMT = new HeavyMotorTechnician();//Decorator pattern  for the display
                 Notification o2 = new Notification("m");//observer pattern  for the display of uopdates for the vehicle
                 newsletter.Attach(o2);
@@ -383,6 +383,7 @@ namespace ONT_PRAC
             }
 
             Console.ReadLine();
-        }
+        } 
     }
+    
 }
