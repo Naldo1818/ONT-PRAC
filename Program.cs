@@ -367,7 +367,7 @@ namespace ONT_PRAC
 
                 }
 
-                Console.WriteLine(Bike.Description() + "\nTotal Amount- " + Bike.Cost().ToString("C"));
+                Console.WriteLine(Bike.Description() + "\nTotal Amount: " + Bike.Cost().ToString("C"));
                 Console.WriteLine();
 
                 //Observer functions
